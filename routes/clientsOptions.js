@@ -11,7 +11,7 @@ router.post('/create', (req, res) => {
         if (err) {
             res.status(500).send({ error: true, msg: err.message })
         } else {
-            res.status(200).json({ data: data, msg: "added soccesfuly" })
+            res.status(200).json({ data: data, msg: "added successfully" })
         }
     })
 })
@@ -45,7 +45,7 @@ router.put('/update/:id', (req, res) => {
             if (err) {
                 res.status(500).send({ error: true, msg: err.message })
             } else {
-                res.status(200).json({ data: data, msg: "updated soccesfuly" });
+                res.status(200).json({ data: data, msg: "updated successfully" });
             }
         }
     )
@@ -57,7 +57,7 @@ router.delete('/delete/:id', (req, res) => {
         if (err) {
             res.status(500).send({ error: true, msg: err.message })
         } else {
-            res.status(200).json({ data: data, msg: "deleted soccesfuly" });
+            res.status(200).json({ data: data, msg: "deleted successfully" });
         }
     })
 })
