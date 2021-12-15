@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const hereRoute = require('./routes/here');
 const thereRoute = require('./routes/there');
 const clientsOptionsRoute = require('./routes/clientsOptions');
-const dbUrl = require('./dbConfig')
+const dbUri = require('./db/dbConfig')
 const clients = express();
-const port = 3000
+
+
+const port = 3000 
 
 //mongoose connection
-mongoose.connect('mongodb://localhost:27017/clients')   
-
-mongoose.connect(dbUrl.db, {
+mongoose.connect(dbUri.db, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
