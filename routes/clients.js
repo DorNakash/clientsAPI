@@ -6,6 +6,7 @@ let Client = require('../modals/clientModal')
 
 //Add Employee
 clientRoute.post('/create', (req, res) => {
+    //debug with console
     console.log(req.body)
     Client.create(req.body, (err, data) => {
         if (err) {

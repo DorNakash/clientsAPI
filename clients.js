@@ -1,14 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const clientsOptionsRoute = require('./routes/clientsOptions');
-const dbUri = require('./db/dbConfig')
-
-const clients = express();
-const port = 3000 
-clients.use(express.json())
+const clients = require('./routes/clients');
+const dbUri = require('./db/dbConfig');
 
 
+const app = express();
 
+//the port we are working on
+const port = 3000
+
+//to encode the data
+app.use(express.json())
 
 //mongoose connection
 mongoose.connect(dbUri.db, {
@@ -21,6 +23,6 @@ mongoose.connect(dbUri.db, {
 
 //routes 
 
-clients.use('/api',clientsOptionsRoute)
+app.use('/api',clients)
 
-clients.listen(port , ()=>console.log(`app is up and running at port: ${port}`));
+app.listen(port , ()=>console.log(`app is up and running at port: ${port}`));

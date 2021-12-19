@@ -5,7 +5,6 @@ const Schema = mongoose.Schema
 
 //define the collection 
 
-
 let Client = new Schema({
     name: {
         type: String , required: true
