@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
+const clientRoute = require('express').Router()
 
 //Client model
 let Client = require('../modals/clientModal')
 
 
 //Add Employee
-router.post('/create', (req, res) => {
+clientRoute.post('/create', (req, res) => {
+    console.log(req.body)
     Client.create(req.body, (err, data) => {
         if (err) {
             res.status(500).send({ error: true, msg: err.message })
@@ -17,7 +17,7 @@ router.post('/create', (req, res) => {
 })
 
 //Get all the Employees
-router.get('/', (req, res) => {
+clientRoute.get('/', (req, res) => {
     Client.find((err, data) => {
         if (err) {
             res.status(500).send({ error: true, msg: err.message })
@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 })
 
 //Get one employee
-router.get('/read/:id', (req, res) => {
+clientRoute.get('/read/:id', (req, res) => {
     Client.findById(req.params.id, (err, data) => {
         if (err) {
             res.status(500).send({ error: true, msg: err.message })
@@ -39,7 +39,7 @@ router.get('/read/:id', (req, res) => {
 })
 
 //update employee $set
-router.put('/update/:id', (req, res) => {
+clientRoute.put('/update/:id', (req, res) => {
     Client.findByIdAndUpdate(req.params.id,
         { $set: req.body }, (err, data) => {
             if (err) {
@@ -52,7 +52,7 @@ router.put('/update/:id', (req, res) => {
 })
 
 //Delete employee
-router.delete('/delete/:id', (req, res) => {
+clientRoute.delete('/delete/:id', (req, res) => {
     Client.findByIdAndDelete(req.params.id, (err, data) => {
         if (err) {
             res.status(500).send({ error: true, msg: err.message })
@@ -63,4 +63,4 @@ router.delete('/delete/:id', (req, res) => {
 })
 
 
-module.exports = router
+module.exports = clientRoute;
