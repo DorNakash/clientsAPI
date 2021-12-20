@@ -3,8 +3,8 @@ POST http://localhost:3000/api/create
 content-type: application/json
 
  {
-  "name": "Dor",
-  "email": "dor@gmail.com",
+  "name": "markzuckerberg",
+  "email": "dorx33@gmailcom",
   "phoneNumber": "05369567423"
  }
 ###
@@ -16,12 +16,12 @@ GET http://localhost:3000/api/
 DELETE  http://localhost:3000/api/delete/61bf3c1dc07d3fcecd644dc3
 
 ###
-PUT http://localhost:3000/api/update/61bf3cc8c07d3fcecd644dc9
+PUT http://localhost:3000/api/update/61c104d86a4aeb2a6ffe559f
 content-type: application/json
 
 {
-  "name": "Jony",
-  "email": "Camony@gmail.com",
+  "name": "test",
+  "email": "nadondon@gmail.com",
   "phoneNumber": "05369567423"
  }
 ###
