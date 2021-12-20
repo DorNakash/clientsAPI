@@ -1,5 +1,5 @@
 const clientRoute = require('express').Router()
-var validator = require('email-validator');
+let validator = require('email-validator');
 
 //Client model
 let Client = require('../modals/clientModal')
