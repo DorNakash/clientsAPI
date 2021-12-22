@@ -1,5 +1,6 @@
 const {Router} = require('express');
 const mongoose = require('mongoose');
+const validEmailCheck = require('./middlewares/middleware');
 
 const Schema = mongoose.Schema
 
@@ -10,7 +11,10 @@ let Client = new Schema({
         type: String , required: true
     },
     email: {
-        type: String, required: true
+        type: String, required: true , 
+        validate: {
+            validator: validEmailCheck, message: 'Please enter a valid email'
+        }
     },
     phoneNumber: {
         type: String, required: true
