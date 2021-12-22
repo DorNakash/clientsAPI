@@ -1,7 +1,7 @@
 const clientRoute = require('express').Router()
 
 //Client model
-let Client = require('../modals/clientModal')
+let Client = require('../models/clientModel')
 
 
 //Add Client with email validation

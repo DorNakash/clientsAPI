@@ -11,7 +11,7 @@ let Client = new Schema({
         type: String , required: true
     },
     email: {
-        type: String, required: true , 
+        type: String, required: true , unique: true,
         validate: {
             validator: validEmailCheck, message: 'Please enter a valid email'
         }
